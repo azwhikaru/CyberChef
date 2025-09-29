@@ -38,10 +38,15 @@ const banner = `/**
 
 
 module.exports = {
+    entry: "./src/web/index.js",
     output: {
+        filename: "bundle.js",
+        path: path.resolve(__dirname, "build/prod"),
         publicPath: "",
         globalObject: "this",
-        assetModuleFilename: "assets/[hash][ext][query]"
+        assetModuleFilename: "assets/[hash][ext][query]",
+        library: "CyberChef",
+        libraryTarget: "window"
     },
     plugins: [
         new webpack.ProvidePlugin({
